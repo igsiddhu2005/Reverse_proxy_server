@@ -961,7 +961,10 @@ function formatUptime(s) {
 }
 
 // ─── Start Servers ────────────────────────────────────────────────────────────
-const PROXY_PORT     = config.server.listen_port    || 9090;
+const PORT = process.env.PORT || 9090;
+server.listen(PORT, () => {
+  console.log("Server running on port", PORT);
+});
 const DASHBOARD_PORT = config.server.dashboard_port || 9091;
 
 proxyServer.listen(PROXY_PORT, () => {
