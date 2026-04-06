@@ -1,7 +1,7 @@
 {
   "server": {
     "listen_port": 9090,
-    "backend_url": "http://localhost:8080",
+    "backend_url": "https://reverse-proxy-server-1-xrhi.onrender.com",
     "dashboard_port": 9091,
     "request_timeout_ms": 10000,
     "max_body_size_bytes": 1048576
