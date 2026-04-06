@@ -256,7 +256,9 @@ const healthStatus = { healthy: false, lastCheck: null, latencyMs: 0 };
 
 function checkHealth() {
   if (!(config.health_check || {}).enabled) return;
-  const backendURL = new URL(config.server.backend_url);
+  const backendURL = new URL(
+  process.env.BACKEND_URL || config.server.backend_url
+   );
   const start = Date.now();
   const req = http.request({
     hostname: backendURL.hostname,
